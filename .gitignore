@@ -1,3 +1,5 @@
 set_env.sh
 .DS_Store
 .gitignore
+/secrets
+.gitignore
