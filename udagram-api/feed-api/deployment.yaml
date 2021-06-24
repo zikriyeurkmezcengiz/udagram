@@ -31,12 +31,12 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 8080
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 30
-            periodSeconds: 10
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 8080
+          #   initialDelaySeconds: 30
+          #   periodSeconds: 10
           volumeMounts:
             - name: aws-secret
               mountPath: "/root/.aws/"
