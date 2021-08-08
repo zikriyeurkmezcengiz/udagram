@@ -7,7 +7,7 @@ import {IndexRouter} from './controllers/v0/index.router';
 import bodyParser from 'body-parser';
 import {config} from './config/config';
 import {V0_USER_MODELS} from './controllers/v0/model.index';
-
+import morgan from "morgan";
 
 (async () => {
   await sequelize.addModels(V0_USER_MODELS);
@@ -17,6 +17,7 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
   const port = process.env.PORT || 8080;
 
   app.use(bodyParser.json());
+  app.use(morgan("combined"));
 
   app.use(cors({
     allowedHeaders: [
